@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { deleteCard, deleteDeck, readDeck } from "../../utils/api";
 import CardList from "../../Card/List";
