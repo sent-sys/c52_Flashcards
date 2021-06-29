@@ -5,8 +5,9 @@ import { deleteDeck, listDecks } from "../../utils/api";
 export default function List() {
   const [decks, setDecks] = useState([]);
 
+  const loadDecks = () => listDecks().then(setDecks);
+
   useEffect(() => {
-    const loadDecks = () => listDecks().then(setDecks);
     loadDecks();
   }, []);
 
@@ -14,7 +15,7 @@ export default function List() {
     const confirmed = window.confirm(
       "Are you sure you want to delete this Deck?"
     );
-    confirmed && deleteDeck(deckId);
+    confirmed && deleteDeck(deckId).then(loadDecks());
   };
 
   return (
