@@ -4,7 +4,6 @@ import { deleteDeck, listDecks } from "../../utils/api";
 
 export default function List() {
   const [decks, setDecks] = useState([]);
-
   const loadDecks = () => listDecks().then(setDecks);
 
   useEffect(() => {

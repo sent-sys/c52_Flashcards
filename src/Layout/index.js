@@ -34,6 +34,9 @@ function Layout() {
           <Route path="/decks/:deckId">
             <DeckView />
           </Route>
+          <Route path="/decks" exact={true}>
+            <Home />
+          </Route>
           <Route path="/" exact={true}>
             <Home />
           </Route>
