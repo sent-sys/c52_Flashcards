@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 import { readDeck } from "../../utils/api";
 import StudyNotEnough from "./StudyNotEnough";

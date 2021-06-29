@@ -8,6 +8,7 @@ import DeckView from "../Deck/View";
 import NotFound from "./NotFound";
 import Home from "../Home";
 import { Route, Switch } from "react-router-dom";
+import React from "react";
 
 function Layout() {
   return (
