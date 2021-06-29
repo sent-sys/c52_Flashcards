@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { deleteDeck, listDecks } from "../../utils/api";
+import { useHistory } from "react-router";
 
 export default function List() {
   const [decks, setDecks] = useState([]);
   const loadDecks = () => listDecks().then(setDecks);
+  const history = useHistory();
 
   useEffect(() => {
     loadDecks();
@@ -14,7 +16,7 @@ export default function List() {
     const confirmed = window.confirm(
       "Are you sure you want to delete this Deck?"
     );
-    confirmed && deleteDeck(deckId).then(loadDecks());
+    confirmed && deleteDeck(deckId).then(loadDecks()).then(history.push("/"));
   };
 
   return (
